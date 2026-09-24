@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: FileLockAnalyzerMac
-          path: dist/FileLockAnalyzerMac.zip
+          path: build/Release/FileLockAnalyzerMac.app
 
       - name: Publish release asset
         if: startsWith(github.ref, 'refs/tags/v')
