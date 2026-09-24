@@ -1,46 +1,49 @@
 # FileLockAnalyzer For Mac
 
-FileLockAnalyzer 的原生 macOS 版本。
+[![English](https://img.shields.io/badge/English-Current-blue)](README.md)
+[![简体中文](https://img.shields.io/badge/简体中文-切换-gray)](README.zh-CN.md)
 
-## 技术栈
+Native macOS version of FileLockAnalyzer.
 
-- 原生 UI: AppKit
-- 语言: Objective-C++
-- 后端分析: `lsof` + `libproc`
-- 构建系统: CMake
+## Tech Stack
 
-## 当前功能
+- Native UI: AppKit
+- Language: Objective-C++
+- Backend: `lsof` + `libproc`
+- Build system: CMake
 
-- 选择文件或文件夹并分析占用
-- 显示占用进程名、PID、进程路径、占用路径、来源
-- 结束选中的占用进程
-- 在 Finder 中定位当前目标
-- 支持命令行传入初始路径
+## Features
 
-## 本地构建
+- Analyze file or folder lock owners
+- Show process name, PID, process path, locked path, and source
+- Terminate the selected process
+- Reveal the current target in Finder
+- Accept an initial path from the command line
 
-在 macOS 上执行：
+## Build
+
+Run on macOS:
 
 ```bash
 cmake -S . -B build -G Xcode
 cmake --build build --config Release
 ```
 
-构建完成后，应用位于：
+The built app is located at:
 
 ```bash
 build/Release/FileLockAnalyzerMac.app
 ```
 
-也可以使用 Ninja：
+You can also build with Ninja:
 
 ```bash
 cmake -S . -B build -G Ninja
 cmake --build build
 ```
 
-## 说明
+## Notes
 
-- 目录分析依赖系统自带的 `lsof`
-- 某些系统进程或其他用户进程可能需要更高权限才能完整显示
-- 当前版本优先实现分析和基础进程操作，后续可以继续补高级解锁能力
+- Directory analysis depends on the system `lsof`
+- Some system processes or processes owned by other users may require elevated privileges to appear completely
+- The current version focuses on analysis and basic process actions first
