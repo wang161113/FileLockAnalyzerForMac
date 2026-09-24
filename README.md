@@ -1,6 +1,6 @@
 # FileLockAnalyzer For Mac
 
-原生 macOS 版本的 FileLockAnalyzer，独立仓库实现，不依赖 Qt。
+FileLockAnalyzer 的原生 macOS 版本。
 
 ## 技术栈
 
@@ -8,7 +8,6 @@
 - 语言: Objective-C++
 - 后端分析: `lsof` + `libproc`
 - 构建系统: CMake
-- CI: GitHub Actions
 
 ## 当前功能
 
@@ -39,13 +38,6 @@ build/Release/FileLockAnalyzerMac.app
 cmake -S . -B build -G Ninja
 cmake --build build
 ```
-
-## CI
-
-仓库内置了 macOS GitHub Actions 工作流：
-
-- `push` / `pull_request` 自动编译
-- 推送 `v*` tag 时自动打包 `.app` 并上传到 GitHub Release
 
 ## 说明
 
